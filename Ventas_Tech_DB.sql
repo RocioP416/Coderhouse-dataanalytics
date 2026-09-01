@@ -5,10 +5,10 @@
 CREATE DATABASE Ventas_Tech_DB;
 
 --- Eliminar tablas si ya existen
-DROP TABLE IF EXISTS Clientes;
-DROP TABLE IF EXISTS Categorias;
-DROP TABLE IF EXISTS Productos;
 DROP TABLE IF EXISTS Ventas;
+DROP TABLE IF EXISTS Productos;
+DROP TABLE IF EXISTS Categorias;
+DROP TABLE IF EXISTS Clientes;
 
 --- Crear tablas 
 --- Tabla categorias 
