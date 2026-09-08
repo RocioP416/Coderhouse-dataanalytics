@@ -47,21 +47,37 @@ ORDER BY "Total_gastado" DESC
 
 ---Consulta 4 — Meses por encima/por debajo del promedio
 SELECT 
-    Mes,
-    Total_facturado,
+    MONTH(fecha_venta) AS mes,
+    SUM(cantidad * precio_unitario) AS total_facturado,
+    
     CASE 
-        WHEN Total_facturado > AVG(Total_facturado) OVER() THEN 'Por encima'
-        WHEN Total_facturado < AVG(Total_facturado) OVER() THEN 'Por debajo'
+        WHEN SUM(cantidad * precio_unitario) > 
+             (
+                SELECT AVG(total_mensual)
+                FROM (
+                    SELECT 
+                        MONTH(fecha_venta) AS mes,
+                        SUM(cantidad * precio_unitario) AS total_mensual
+                    FROM ventas
+                    GROUP BY MONTH(fecha_venta)
+                ) AS tabla_meses)
+        THEN 'Por encima'
+        WHEN SUM(cantidad * precio_unitario) < 
+             (
+                SELECT AVG(total_mensual)
+                FROM (
+                    SELECT 
+                        MONTH(fecha_venta) AS mes,
+                        SUM(cantidad * precio_unitario) AS total_mensual
+                    FROM ventas
+                    GROUP BY MONTH(fecha_venta)
+                ) AS tabla_meses)
+        THEN 'Por debajo'
         ELSE 'En el promedio'
-    END AS Estado
-FROM (
-    SELECT 
-        MONTH(fecha_venta) AS Mes,
-        SUM(cantidad * precio_unitario) AS Total_facturado
-    FROM ventas
-    GROUP BY MONTH(fecha_venta)
-) AS SubconsultaMensual
-ORDER BY Mes;
+    END AS comparacion_promedio
+
+FROM ventas
+GROUP BY MONTH(fecha_venta);
 
 ---COMENTARIOS FINALES
 ---Los productos 1, 3 y 5 concentran más del 80% de los ingresos por ventas registrados
