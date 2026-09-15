@@ -1,11 +1,11 @@
 -- ============================================================================
 -- Pre-entrega: Consultas con JOINs para el proyecto – Cruzando tablas para enriquecer el análisis
--- Aclaración: Inicialmente, se agrega el código para actualizar y expandir el modelo de datos para
---              poder realizar el analisis de la problematica definida en la pre-entrega 1. 
+-- Aclaración: Inicialmente, se agrega el código para actualizar y expandir el modelo de datos propuesto en M3 
+--              para poder realizar el analisis de la problematica definida en la pre-entrega 1. 
 --              Luego se resuelven las consultas de la pre-entrega 5.
 -- ============================================================================
 
-USE Ventas_Tech_DB_1;
+USE Ventas_Tech_DB;
 
 -- ----------------------------------------------------------------------------
 -- CREACIÓN DE TABLAS NUEVAS
