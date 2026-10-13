@@ -12,8 +12,8 @@ El análisis considera la evolución de las ventas y su comportamiento según di
 
 ## 🎯 Objetivos
 
-- Analizar la evolución de las ventas y detectar variaciones relevantes. 
-- Comparar el desempeño del último trimestre con períodos anteriores y con el mismo trimestre del año previo.
+- Analizar la evolución de las ventas online y detectar variaciones relevantes. 
+- Identificar tendencia en el comportamiento de los clientes, en su fidelidad.
 - Identificar los productos, clientes, regiones y canales con mayor impacto en los resultados.
 - Evaluar el efecto de los descuentos y las devoluciones sobre el desempeño comercial.
 - Desarrollar indicadores y visualizaciones que faciliten la interpretación de los resultados.
@@ -22,7 +22,7 @@ El análisis considera la evolución de las ventas y su comportamiento según di
 
 | Herramienta | Aplicación |
 |---|---|
-| **SQL** | Extracción, consulta y análisis de datos mediante consultas SQL. |
+| **SQL Server** | Extracción, consulta y análisis de datos mediante consultas SQL. |
 | **Power Query (M)** | Limpieza, transformación y preparación de los datos. |
 | **Power BI** | Modelado de datos, creación de medidas DAX y desarrollo de dashboards interactivos. |
 | **GitHub** | Versionado, organización y documentación del proyecto. |
@@ -31,12 +31,13 @@ El análisis considera la evolución de las ventas y su comportamiento según di
 
 El proyecto sigue un flujo de trabajo de análisis de datos:
 
-1. **Extracción:** obtención de información comercial proveniente de la fuente de facturación.
-2. **Preparación:** revisión de la calidad de los datos, tratamiento de valores nulos y estandarización de campos.
-3. **Transformación:** limpieza y estructuración de los datos con Power Query y consultas SQL.
-4. **Modelado:** organización de la información en tablas de hechos y dimensiones para facilitar el análisis.
-5. **Análisis:** construcción de indicadores comerciales y comparación de períodos.
-6. **Visualización:** desarrollo de dashboards en Power BI para comunicar los principales hallazgos.
+1. **Definición de problematica y lineamientos del análisis**: definición de los aspectos del proyecto a evaluar, definición de preguntas y KPIs aplicables al analisis.
+2. **Extracción:** obtención de información comercial proveniente de la fuente de facturación.
+3. **Preparación:** revisión de la calidad de los datos, tratamiento de valores nulos y estandarización de campos.
+4. **Transformación:** limpieza y estructuración de los datos con Power Query y consultas SQL.
+5. **Modelado:** organización de la información en tablas de hechos y dimensiones para facilitar el análisis.
+6. **Análisis:** construcción de indicadores comerciales y comparación de períodos.
+7. **Visualización:** desarrollo de dashboards en Power BI para comunicar los principales hallazgos.
 
 ## 🗂️ Modelo de datos
 
@@ -54,7 +55,7 @@ Las tablas se relacionan mediante sus identificadores correspondientes, con el o
 
 El proyecto busca responder preguntas como:
 
-- ¿Cómo evolucionaron las ventas durante el último trimestre?
+- ¿Cómo evolucionaron las ventas?
 - ¿Qué variaciones se observan respecto de los períodos de comparación?
 - ¿Qué productos y clientes explican una mayor proporción de las ventas?
 - ¿Qué regiones y canales presentan mejor o peor desempeño?
@@ -64,8 +65,8 @@ El proyecto busca responder preguntas como:
 
 ### Requisitos previos
 
-- Tener instalado un motor de base de datos compatible con los scripts.
-- Contar con un cliente SQL, como SQL Server Management Studio (SSMS), si los scripts fueron desarrollados para SQL Server.
+- Tener instalado SQL Server.
+- Contar con SQL Server Management Studio (SSMS).
 - Disponer de los archivos SQL y de los datos necesarios para ejecutar las consultas.
 
 ### Pasos de ejecución
